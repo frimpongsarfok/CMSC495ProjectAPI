@@ -1,17 +1,15 @@
 from flask import Flask, request, jsonify
 from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
-from werkzeug.security import check_password_hash
 from flask_cors import CORS
-from hmac import compare_digest
 import bcrypt
 import uuid
 
 app = Flask(__name__)
 CORS(app)  # Add closing parenthesis here
 
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:////Users/kantanka/Desktop/The-Operators-1/backend/instance/mydatabase.db'
-app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///my_database.db"
+app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 db = SQLAlchemy(app)
 
 
